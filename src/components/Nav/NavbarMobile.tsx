@@ -5,7 +5,6 @@ export default function NavbarMobile({ isAuthenticated, handleLogin, handleLogou
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
 
-  // Fermer le menu en cliquant en dehors
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const menu = document.getElementById('mobile-menu');

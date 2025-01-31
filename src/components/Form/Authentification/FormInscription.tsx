@@ -5,52 +5,28 @@ interface FormProps {}
 export default function Form({}: FormProps) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-
-  const colors = [
-    'bg-red-100',
-    'bg-yellow-100',
-    'bg-green-100',
-    'bg-blue-100',
-    'bg-purple-100',
-    'bg-yellow-200',
-    'bg-orange-100',
-    'bg-teal-100',
-    'bg-pink-100',
-    'bg-indigo-100',
-  ];
-
-  const getColorClass = (inputLength: number): string => {
-    return colors[inputLength % colors.length];
-  };
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    
-    console.log('Email:', email);
-    console.log('Mot de passe:', password);
-
-    const tempEmail = email; 
-    setEmail(password); 
-    setPassword(tempEmail);
   };
-
   return (
     <form onSubmit={handleSubmit} className="p-4 bg-white shadow rounded-lg max-w-md">
       <h2 className="text-xl font-bold mb-4 text-center flex items-center justify-center">
-  Inscription chez
-  <img src="src/assets/img/logo.png" alt="logo" className="h-5 w-auto" />
-</h2>
- <div className="mb-4">
+        Inscription chez
+        <img src="src/assets/img/logo.png" alt="logo" className="h-5 w-auto" />
+      </h2>
+      <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
           Adresse email
         </label>
         <input
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} 
-          className={`mt-1 block w-full px-4 py-2 border rounded-md ${getColorClass(email.length)} border-gray-300 focus:ring-green-500 focus:border-green-500`}
+          onChange={(e) => setEmail(e.target.value)}
+          className="mt-1 block w-full px-4 py-2 border rounded-md border-gray-300"
         />
-        {email && ( 
+        {email && (
           <p className="mt-2 text-gray-600">Email saisi : {email}</p>
         )}
       </div>
@@ -62,8 +38,20 @@ export default function Form({}: FormProps) {
         <input
           type="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)} 
-          className={`mt-1 block w-full px-4 py-2 border rounded-md ${getColorClass(password.length)} border-gray-300 focus:ring-green-500 focus:border-green-500`}
+          onChange={(e) => setPassword(e.target.value)}
+          className="mt-1 block w-full px-4 py-2 border rounded-md border-gray-300"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+          Confirmer le mot de passe
+        </label>
+        <input
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          className="mt-1 block w-full px-4 py-2 border rounded-md border-gray-300"
         />
       </div>
 

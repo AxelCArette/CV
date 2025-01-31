@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation,Autoplay } from 'swiper/modules'; // Ajout des modules nécessaires
 import 'swiper/swiper-bundle.css';
 
 interface CarouselItem {
@@ -16,6 +17,12 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
       spaceBetween={50}
       slidesPerView={1}
       pagination={{ clickable: true }}
+      navigation
+      modules={[Navigation,Autoplay]} 
+      autoplay={{
+        delay: 10000, 
+        disableOnInteraction: false, 
+      }}
     >
       {items.map((item, index) => (
         <SwiperSlide key={index}>

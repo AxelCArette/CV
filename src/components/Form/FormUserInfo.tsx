@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FormAddress from './FormAddress';
+import FormAddress from './formaddresse/FormAddress';
 
 const FormUserPersonalInfo: React.FC = () => {
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-import Form from '../../components/Form/FormConnexion';
+import Form from '../../components/Form/Authentification/FormConnexion';
 
 function Connect() {
   return (

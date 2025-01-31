@@ -1,18 +1,13 @@
 import '../../App.css';
 import '../../App.tsx';
 import Carousel from '../../components/Carousel';
+import CarrousselCV from '../../components/CV/CarrousselCV';
 
 const Home: React.FC = () => {
   const tutorials = [
     { title: 'Tutoriel 1', description: 'Description du tutoriel 1' },
     { title: 'Tutoriel 2', description: 'Description du tutoriel 2' },
     { title: 'Tutoriel 3', description: 'Description du tutoriel 3' },
-  ];
-
-  const cvs = [
-    { title: 'CV 1', description: 'Description du CV 1' },
-    { title: 'CV 2', description: 'Description du CV 2' },
-    { title: 'CV 3', description: 'Description du CV 3' },
   ];
 
   return (
@@ -23,7 +18,7 @@ const Home: React.FC = () => {
       <h2 className="text-center text-2xl font-bold mb-4">Tutoriels</h2>
       <Carousel items={tutorials} />
       <h2 className="text-center text-2xl font-bold mt-10 mb-4">CV</h2>
-      <Carousel items={cvs} />
+      <CarrousselCV />
     </>
   );
 }

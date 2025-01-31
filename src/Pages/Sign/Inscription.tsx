@@ -1,4 +1,4 @@
-import Form from '../../components/Form/FormInscription';
+import Form from '../../components/Form/Authentification/FormInscription';
 
 function Inscription() {
   return (

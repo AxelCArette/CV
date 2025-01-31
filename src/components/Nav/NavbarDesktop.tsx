@@ -11,9 +11,8 @@ export default function NavbarDesktop({ isAuthenticated, handleLogout }: { isAut
       </a>
 
       <div className="flex space-x-8">
-        <a href="#" className="text-gray-700 hover:text-green-500 transition">Consulter les CV</a>
+        <a href="/CVuser" className="text-gray-700 hover:text-green-500 transition">Consulter les CV</a>
 
-        {/* Menu Aide */}
         <div className="relative">
           <button 
             onClick={() => setIsHelpOpen(!isHelpOpen)} 
@@ -31,7 +30,6 @@ export default function NavbarDesktop({ isAuthenticated, handleLogout }: { isAut
           </div>
         </div>
 
-        {/* Menu Compte */}
         <div className="relative">
           <button 
             onClick={() => setIsAccountOpen(!isAccountOpen)} 
